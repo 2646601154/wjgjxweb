@@ -1,14 +1,11 @@
-# 搞机工具箱 - 全安卓通用免 ROOT 玩机工具（ADB_GUI）。
+# 搞机工具箱Web - 网页版 Android 玩机工具
 
  [在线体验](https://czjam.github.io/gjgjxweb/)
 
-本项目基于个人开发的 [《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 移植而来。通过 [Tango](https://github.com/yume-chan/ya-webadb) 实现 WebADB，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 实现交互式终端，可在浏览器纯前端运行，免下载安装，云端自动更新。
-
-
+《搞机工具箱》是一款ADB图形化工具。本项目移植于个人开发的 [《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可在浏览器体验PC版的99%功能，免下载安装，自动更新。
 
  [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
  
- [原项目《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 
 
 ## 功能
 
@@ -34,7 +31,7 @@
 - 使用支持 WebUSB 的 Chrome 或 Edge（不分操作系统，手机安装Chrome也能用）。
 - 手机开启开发者选项和 USB 调试，使用 USB 数据线连接电脑。
 - 通过本机 `localhost` / `127.0.0.1` 或 HTTPS 网站访问页面。
-- Windows 需要能够正常识别手机的 ADB USB 接口，手机端同意授权请求。
+- Windows 需要能够正常识别手机的 ADB USB 接口，且手机端同意授权请求。
 
 
 ### 本地运行
