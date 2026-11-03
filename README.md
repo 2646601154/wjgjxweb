@@ -1,10 +1,11 @@
 # 搞机工具箱 Web 版
 
-全安卓通用免 ROOT 玩机工具，在电脑浏览器中通过 USB 连接 Android 设备。
+全安卓通用免 ROOT 玩机工具（ADB_GUI），在电脑浏览器中通过 USB 连接 Android 设备。 [在线体验](https://czjam.github.io/gjgjxweb/)
 
-本仓库提供 **HTML、CSS、JavaScript 分离版**，当前版本 **v1.0.0**。通过 [Tango](https://github.com/yume-chan/ya-webadb) 实现 WebADB，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 提供交互式终端。页面和第三方依赖均保存在本地，可直接部署到静态网站，无需构建或安装 npm 依赖。
+本项目通过 [Tango](https://github.com/yume-chan/ya-webadb) 实现 WebADB，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 提供交互式终端。仓库提供 **HTML、CSS、JavaScript 分离版 与 单HTML整合版**，页面和第三方依赖均保存在本地，可直接部署到静态网站，无需构建或安装 npm 依赖。
 
-[工具箱官网](https://jamcz.com/gjgjx) · [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
+ [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
+ [原项目《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb)
 
 ## 功能
 
@@ -35,7 +36,10 @@
 浏览器通过 WebUSB 直接与手机通信，无需运行电脑端 `adb.exe`。本地启动所用的 Node.js 仅提供静态文件服务。
 
 ### 本地运行
+#### 方法1: 单文件
+下载项目docs中的index.html即可。已内嵌完整依赖，使用Chrome内核浏览器直接本地运行。
 
+#### 方法2: 完整项目
 1. 下载并解压完整项目，保留目录结构。
 2. 安装 [Node.js](https://nodejs.org/)，在包含 `server.cjs` 的目录打开终端。
 3. 运行：
