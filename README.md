@@ -1,8 +1,10 @@
-# 搞机工具箱 Web 版
+# 搞机工具箱 - 全安卓通用免 ROOT 玩机工具（ADB_GUI）。
 
-全安卓通用免 ROOT 玩机工具（ADB_GUI），在电脑浏览器中通过 USB 连接 Android 设备。 [在线体验](https://czjam.github.io/gjgjxweb/)
+ [在线体验](https://czjam.github.io/gjgjxweb/)
 
-本项目通过 [Tango](https://github.com/yume-chan/ya-webadb) 实现 WebADB，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 提供交互式终端。仓库提供 **HTML、CSS、JavaScript 分离版 与 单HTML整合版**，页面和第三方依赖均保存在本地，可直接部署到静态网站，无需构建或安装 npm 依赖。
+本项目基于个人开发的 [《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 移植而来。通过 [Tango](https://github.com/yume-chan/ya-webadb) 实现 WebADB，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 实现交互式终端，可在浏览器纯前端运行，免下载安装，云端自动更新。
+
+
 
  [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
  
@@ -29,18 +31,20 @@
 
 ### 使用条件
 
-- 电脑端使用支持 WebUSB 的 Chrome 或 Edge。
-- 手机开启开发者选项和 USB 调试，使用支持数据传输的 USB 数据线连接电脑。
+- 使用支持 WebUSB 的 Chrome 或 Edge（不分操作系统，手机安装Chrome也能用）。
+- 手机开启开发者选项和 USB 调试，使用 USB 数据线连接电脑。
 - 通过本机 `localhost` / `127.0.0.1` 或 HTTPS 网站访问页面。
-- Windows 需要能够正常识别手机的 ADB USB 接口。
+- Windows 需要能够正常识别手机的 ADB USB 接口，手机端同意授权请求。
 
-浏览器通过 WebUSB 直接与手机通信，无需运行电脑端 `adb.exe`。本地启动所用的 Node.js 仅提供静态文件服务。
 
 ### 本地运行
-#### 方法1: 单文件
+
+仓库提供 **HTML、CSS、JavaScript 分离版** 与 **单HTML整合版**。页面和第三方依赖均保存在本地，可直接本地部署或执行，无需构建或安装 npm 依赖。
+
+#### 方法1: 整合版
 下载项目docs中的index.html即可。已内嵌完整依赖，使用Chrome内核浏览器直接本地运行。
 
-#### 方法2: 完整项目
+#### 方法2: 分离版
 1. 下载并解压完整项目，保留目录结构。
 2. 安装 [Node.js](https://nodejs.org/)，在包含 `server.cjs` 的目录打开终端。
 3. 运行：
