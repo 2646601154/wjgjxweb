@@ -5,7 +5,8 @@
 本项目通过 [Tango](https://github.com/yume-chan/ya-webadb) 实现 WebADB，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 提供交互式终端。仓库提供 **HTML、CSS、JavaScript 分离版 与 单HTML整合版**，页面和第三方依赖均保存在本地，可直接部署到静态网站，无需构建或安装 npm 依赖。
 
  [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
- [原项目《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb)
+ 
+ [原项目《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 
 
 ## 功能
 
@@ -88,6 +89,8 @@ WebUSB 的授权和使用条件可参考 [Chrome WebUSB 文档](https://develope
 ├── LICENSE-xterm.txt          # xterm.js 相关组件许可
 ├── assets/
 │   └── favicon.svg            # 页面图标
+├── docs/
+│   └── index.html            # 完整本地运行文件
 ├── css/
 │   ├── styles.css             # 工具箱样式
 │   └── xterm.css              # 终端样式
