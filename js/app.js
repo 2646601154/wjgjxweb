@@ -93,7 +93,22 @@ import {GJTerminal} from "./terminal.js";
     'google-disable':async()=>{const selected=$$('[data-google]:checked');if(!selected.length)throw new Error('请先选择 Google 软件');if(!await confirm('批量禁用',`禁用所选的 ${selected.length} 个软件？`))return;const failures=[];for(const el of selected){try{await service.packageAction('disable',el.dataset.google);}catch(e){failures.push(el.dataset.google+'：'+e.message);}}if(failures.length)await textDialog('部分软件操作失败',failures.join('\n'));else toast('所选软件已禁用');},
     'google-enable':async()=>{const selected=$$('[data-google]:checked');if(!selected.length)throw new Error('请先选择 Google 软件');const failures=[];for(const el of selected){try{await service.packageAction('enable',el.dataset.google);}catch(e){failures.push(el.dataset.google+'：'+e.message);}}if(failures.length)await textDialog('部分软件操作失败',failures.join('\n'));else toast('所选软件已启用');},
     'list-packages':async()=>{const packages=await service.listPackages();await modal('选择已安装软件','<label class="field"><span>搜索包名</span><input id="package-search" placeholder="搜索…"></label><div class="script-list section-gap" id="package-list" style="max-height:320px;overflow:auto"></div>',[{text:'关闭',value:null}],()=>{const render=()=>{const fragment=document.createDocumentFragment();for(const name of packages.filter(x=>x.toLowerCase().includes($('package-search').value.toLowerCase()))){const b=document.createElement('button');b.textContent=name;b.onclick=()=>{preferences.autoFill=false;savePreferences();$('package-name').value=name;closeModal();};fragment.appendChild(b);}$('package-list').replaceChildren(fragment);};$('package-search').oninput=render;render();});},
-    'install-apk':async()=>{const files=await pickFiles({accept:'.apk'});if(!files.length)return;let split=false;if(files.length>1){const mode=await modal('安装方式',`<p class="about-copy">已选择 ${files.length} 个 APK。独立软件请批量安装；同一个软件的 base.apk 与 split APK 请组合安装。</p>`,[{text:'取消',value:null,secondary:true},{text:'批量安装',value:'batch'},{text:'组合安装拆分 APK',value:'split'}]);if(mode===null)return;split=mode==='split';}const results=await service.install(files,{split});await textDialog('安装结果',results.map(r=>`${r.success?'成功':'失败'}：${r.name}\n${r.output}`).join('\n\n'));},
+    'install-apk':async()=>{
+      const files=await pickFiles({accept:'.apk'});if(!files.length)return;
+      if(files.length===1){
+        const results=await service.install(files);
+        await textDialog('安装结果',results.map(r=>(r.success?'成功':'失败')+'：'+r.name+'\n'+r.output).join('\n\n'));return;
+      }
+      const results=await service.install(files).finally(()=>{$('transfer-progress').hidden=true;});
+      const failures=results.filter(r=>!r.success),message='批量安装完成：成功 '+(results.length-failures.length)+' 个，失败 '+failures.length+' 个';
+      const statusLine=$('transfer-status');statusLine.textContent=message;
+      if(failures.length){
+        const details=document.createElement('details'),summary=document.createElement('summary'),output=document.createElement('pre');
+        summary.textContent='查看安装失败详情';output.className='modal-text';output.textContent=failures.map(r=>r.name+'\n'+r.output).join('\n\n');
+        details.append(summary,output);statusLine.append(details);
+      }
+      toast(message,failures.length>0);
+    },
     'push-files':async()=>{const files=await pickFiles();if(!files.length)return;const failures=[];for(const file of files){try{await service.push(file,preferences.pushPath+file.name);}catch(e){failures.push(file.name+'：'+e.message);}}if(failures.length)await textDialog('部分文件传输失败',failures.join('\n'));else toast(`${files.length} 个文件发送完成`);},
     'screenshot':screenshot,
     'screenshots':async()=>{await modal('本次会话的截图','<div class="download-list" id="screenshot-list"></div>',[{text:'关闭',value:null}],()=>{if(!screenshotFiles.length){$('screenshot-list').textContent='尚无已接收的截图。请开启「同时保存到电脑」后截屏。';return;}for(const file of screenshotFiles){const item=document.createElement('div');item.className='download-item';const img=document.createElement('img');img.src=file.url;img.alt='手机截图';const span=document.createElement('span');span.textContent=file.name;const a=document.createElement('a');a.className='btn secondary small';a.href=file.url;a.download=file.name;a.textContent='保存';item.append(img,span,a);$('screenshot-list').appendChild(item);}});},
