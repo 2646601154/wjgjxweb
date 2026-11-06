@@ -1,9 +1,9 @@
-# 搞机工具箱 Web - 网页版 Android 玩机工具
+# 玩机工具箱 Web - 网页版 Android 玩机工具
 
-## <p align="center"><a href="https://czjam.github.io/gjgjxweb/">在线体验</a></p>
-《搞机工具箱》是一款ADB图形化工具。
+## <p align="center"><a href="https://2646601154.github.io/wjgjxweb/">在线体验</a></p>
+《玩机工具箱》是一款ADB图形化工具。
 
-本项目移植于个人开发的 [《搞机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可在支持Chrome内核的浏览器体验PC版工具功能，实现免下载安装的跨平台使用体验。
+本项目移植于个人开发的 [《玩机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可在支持Chrome内核的浏览器体验PC版工具功能，实现免下载安装的跨平台使用体验。
 
  [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
  

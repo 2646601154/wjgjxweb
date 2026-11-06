@@ -3,7 +3,7 @@ SPDX-FileCopyrightText: 2026 晨钟酱Official
 SPDX-License-Identifier: GPL-3.0-only
 See LICENSE for the full license text.
 */
-const GJTerminal = (() => {
+const WJTerminal = (() => {
   class Controller {
     constructor({element,onState=()=>{},onError=()=>{}}) {
       this.element=element;this.onState=onState;this.onError=onError;this.generation=0;this.pending=[];this.starting=false;
@@ -81,4 +81,4 @@ const GJTerminal = (() => {
   return {Controller};
 })();
 
-export {GJTerminal};
+export {WJTerminal};
