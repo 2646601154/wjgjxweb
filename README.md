@@ -1,13 +1,24 @@
 # 玩机工具箱 Web - 网页版 Android 玩机工具
 
 ## <p align="center"><a href="https://2646601154.github.io/wjgjxweb/">在线体验</a></p>
+
+> **原作者与来源声明**
+>
+> - **原作者**：[晨钟酱Official（CzJam）](https://space.bilibili.com/251013709)
+> - **原项目**：[CzJam/gjgjxweb](https://github.com/CzJam/gjgjxweb)
+> - **原 PC 版**：[《玩机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb)
+> - **作者官网**：[jamcz.com](https://jamcz.com)
+> - **本仓库维护**：[2646601154](https://github.com/2646601154)（仅负责改名与部署，非原作者）
+>
+> 本仓库（[2646601154/wjgjxweb](https://github.com/2646601154/wjgjxweb)）是原作者开源项目的**改名部署版本**，不是原创项目。主要改动为品牌名称、仓库地址、代码命名空间和本地存储前缀；**功能代码、界面设计与文档的著作权归原作者 晨钟酱Official 所有**。本仓库维护者不主张原创著作权，也不代表原作者。二次分发请遵守 GPL-3.0-only，并保留本声明、原作者署名和许可证。
+
 《玩机工具箱》是一款ADB图形化工具。
 
-本项目移植于个人开发的 [《玩机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb) 。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可在支持Chrome内核的浏览器体验PC版工具功能，实现免下载安装的跨平台使用体验。
+原项目由 **晨钟酱Official** 开发，移植自其 [《玩机工具箱》PC版](https://www.bilibili.com/video/BV1QvHhzLELb)。借助 [Tango](https://github.com/yume-chan/ya-webadb) 实现了 WebADB，并通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 交互式终端，可在支持Chrome内核的浏览器体验PC版工具功能，实现免下载安装的跨平台使用体验。
 
- [作者 @晨钟酱Official](https://space.bilibili.com/251013709)
+ [原作者 @晨钟酱Official](https://space.bilibili.com/251013709)
  
- [官网: jamcz.com](https://jamcz.com)
+ [原作者官网: jamcz.com](https://jamcz.com)
  
 
 ## 功能
@@ -88,11 +99,12 @@ WebUSB 的授权和使用条件可参考 [Chrome WebUSB 文档](https://develope
 ├── index.html                 # 页面结构与模块入口
 ├── README.md                  # 项目说明
 ├── LICENSE                    # 项目 GPLv3 许可证全文
+├── NOTICE.md                  # 原作者、来源与署名声明
 ├── server.cjs                 # 本地静态服务器（Node.js 标准库）
 ├── LICENSE-Tango.txt          # Tango 相关组件许可
 ├── LICENSE-xterm.txt          # xterm.js 相关组件许可
 ├── assets/
-│   └── favicon.svg            # 页面图标
+│   └── favicon.ico            # 页面图标
 ├── docs/
 │   └── index.html            # 完整本地运行文件
 ├── css/
@@ -194,7 +206,9 @@ adb shell wm size
 
 本项目的原创代码采用 **GNU General Public License v3.0（GPL-3.0-only）**，许可证全文见 [LICENSE](LICENSE)。
 
-Copyright (C) 2026 晨钟酱Official。
+Copyright (C) 2026 晨钟酱Official（CzJam）。本仓库的改名与部署由 2646601154 维护，不改变原作者的著作权。
+
+完整来源与署名说明见 [NOTICE.md](NOTICE.md)。
 
 第三方组件保留各自的版权与 MIT 许可，详见 [LICENSE-Tango.txt](LICENSE-Tango.txt) 和 [LICENSE-xterm.txt](LICENSE-xterm.txt)。分发时请保留这些声明。
 

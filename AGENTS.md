@@ -62,6 +62,7 @@ grep -n "const WJ = \|const WJBatch = \|const WJTransport = \|const WJTerminal =
 - `js/vendor/` 是 vendored ESM/UMD，不要手改。升级 Tango/xterm 时同步 `js/vendor/`、`docs/index.html` 内联副本以及 `LICENSE-Tango.txt` / `LICENSE-xterm.txt`。
 - 原创代码为 GPL-3.0-only，源文件保留 SPDX 头；提交信息沿用简短中文。
 - 不要假设 root；降级、失败提示、确认弹窗都是产品的一部分。
+- 原作者是 **晨钟酱Official（CzJam）**，原项目为 `CzJam/gjgjxweb`；本仓库只是改名部署版。界面、文档和元信息不得把本仓库维护者写成原作者，改动时保留署名、原项目链接与 `NOTICE.md`。
 
 ## 已知文档偏差
 
